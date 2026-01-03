@@ -6,6 +6,9 @@ module.exports = {
     headless: true,
     baseURL: 'http://127.0.0.1:5000',
     actionTimeout: 60000,
-    navigationTimeout: 60000
+    navigationTimeout: 60000,
+    // Keep helpful artifacts for CI failures
+    screenshot: 'only-on-failure',
+    trace: 'on'
   }
 };

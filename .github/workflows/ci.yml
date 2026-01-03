@@ -82,5 +82,11 @@ jobs:
         run: npx playwright install --with-deps
         working-directory: client
       - name: Run E2E tests
-        run: npm run test:e2e:ci
+        run: npx playwright test --output=playwright-results --reporter=list
         working-directory: client
+      - name: Upload Playwright artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-results
+          path: client/playwright-results
