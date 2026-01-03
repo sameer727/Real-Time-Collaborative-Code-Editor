@@ -9,38 +9,115 @@
   <body>
     <div id="container"></div>
 
-    <!-- Monaco loader -->
-    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.36.1/min/vs/loader.js"></script>
-    <script src="https://unpkg.com/yjs@13.5.45/dist/yjs.js"></script>
-    <script src="https://unpkg.com/y-websocket@1.4.5/dist/y-websocket.js"></script>
-    <script src="https://unpkg.com/y-monaco@1.0.0/dist/y-monaco.js"></script>
+    <!-- Monaco loader (try local vendor first, fall back to CDN) -->
+    <script>
+      (function () {
+        const s = document.createElement('script');
+        s.src = '/vendor/monaco-editor/min/vs/loader.js';
+        s.onload = function () { /* loaded vendor */ };
+        s.onerror = function () {
+          console.warn('Vendor monaco loader failed, falling back to CDN');
+          s.src = 'https://cdn.jsdelivr.net/npm/monaco-editor@0.36.1/min/vs/loader.js';
+        };
+        document.head.appendChild(s);
+      })();
+    </script>
+    <script src="/vendor/yjs/dist/yjs.js"></script>
+    <script src="/vendor/y-websocket/dist/y-websocket.js"></script>
+    <script src="/vendor/y-monaco/dist/y-monaco.js"></script>
 
     <script>
       (async function () {
-        const params = new URLSearchParams(window.location.search);
-        const room = params.get('room') || 'default-room';
+        try {
+          console.log('editor:boot');
+          const params = new URLSearchParams(window.location.search);
+          const room = params.get('room') || 'default-room';
 
-        // Configure Monaco loader
-        require.config({ paths: { vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.36.1/min/vs' } });
-        require(['vs/editor/editor.main'], function () {
-          const editor = monaco.editor.create(document.getElementById('container'), {
-            value: '// Loading...\n',
-            language: 'javascript',
-            automaticLayout: true
+          // Configure Monaco loader (prefer vendor path)
+          console.log('editor:loading-monaco');
+          require.config({ paths: { vs: window.location.origin + '/vendor/monaco-editor/min/vs' } });
+          require(['vs/editor/editor.main'], function () {
+            console.log('editor:monaco-ready');
+            const editor = monaco.editor.create(document.getElementById('container'), {
+              value: '// Loading...\n',
+              language: 'javascript',
+              automaticLayout: true
+            });
+
+            // diagnostics
+            window.__rtcDiag = window.__rtcDiag || {};
+            window.__rtcDiag[room] = { hasMonaco: !!window.monaco, hasY: !!window.Y, hasYMonaco: !!window.YMonaco };
+            console.info('editor:diag', window.__rtcDiag[room]);
+
+            // Yjs setup
+            console.log('editor:creating-ydoc');
+            const ydoc = new Y.Doc();
+            const provider = new WebsocketProvider('ws://'+location.hostname+':5000', room, ydoc);
+            const yText = ydoc.getText('monaco');
+
+            // Load persisted snapshot if present
+            (async () => {
+              try {
+                console.log('editor:loading-snapshot');
+                const res = await fetch(`/api/rooms/${room}/load`);
+                if (res.ok) {
+                  const data = await res.json();
+                  if (data && data.updateBase64) {
+                    const b64 = data.updateBase64;
+                    const str = atob(b64);
+                    const arr = new Uint8Array(str.length);
+                    for (let i = 0; i < str.length; i++) arr[i] = str.charCodeAt(i);
+                    Y.applyUpdate(ydoc, arr);
+                    console.log('editor:applied-snapshot');
+                  }
+                }
+              } catch (e) {
+                console.error('Failed to load snapshot', e);
+              }
+            })();
+
+            // Bind
+            if (window.YMonaco && window.YMonaco.MonacoBinding) {
+              new YMonaco.MonacoBinding(yText, editor.getModel(), new Set([editor]), provider.awareness);
+              console.log('editor:bound');
+            } else {
+              console.warn('YMonaco not available; attempting to load vendor copy');
+              const s2 = document.createElement('script');
+              s2.src = '/vendor/y-monaco/dist/y-monaco.js';
+              s2.onload = function () {
+                try { new YMonaco.MonacoBinding(yText, editor.getModel(), new Set([editor]), provider.awareness); console.log('editor:bound-after-vendor'); } catch (e) { console.error('bind failed after vendor', e); }
+              };
+              s2.onerror = function () { console.warn('vendor y-monaco failed, try CDN'); s2.src = 'https://unpkg.com/y-monaco@1.0.0/dist/y-monaco.js'; };
+              document.body.appendChild(s2);
+            }
+
+            // Expose for tests
+            window.__rtcEditors = window.__rtcEditors || {};
+            window.__rtcEditors[room] = editor;
+
+            // expose ydoc and forceSave helper
+            window.__rtcYDocs = window.__rtcYDocs || {};
+            window.__rtcYDocs[room] = ydoc;
+            window.__rtcForceSave = window.__rtcForceSave || (async function(rid) {
+              const d = window.__rtcYDocs && window.__rtcYDocs[rid];
+              if (!d) throw new Error('ydoc not found');
+              const update = Y.encodeStateAsUpdate(d);
+              let s = '';
+              const CHUNK_SIZE = 0x8000;
+              for (let i = 0; i < update.length; i += CHUNK_SIZE) {
+                const slice = update.subarray(i, i + CHUNK_SIZE);
+                s += String.fromCharCode.apply(null, slice);
+              }
+              const b64 = btoa(s);
+              await fetch(`/api/rooms/${rid}/save`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ updateBase64: b64 }) });
+              console.log('editor:force-saved');
+            });
           });
+        } catch (err) {
+          console.error('editor:error', err);
+        }
 
-          // Yjs setup
-          const ydoc = new Y.Doc();
-          const provider = new WebsocketProvider('ws://'+location.hostname+':5000', room, ydoc);
-          const yText = ydoc.getText('monaco');
-
-          // Bind
-          new YMonaco.MonacoBinding(yText, editor.getModel(), new Set([editor]), provider.awareness);
-
-          // Expose for tests
-          window.__rtcEditors = window.__rtcEditors || {};
-          window.__rtcEditors[room] = editor;
-        });
+        window.addEventListener('error', (e) => { console.error('editor:window-error', e && e.error ? e.error.toString() : e); });
       })();
     </script>
   </body>

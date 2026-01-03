@@ -43,7 +43,18 @@ export default function App() {
           </div>
         </div>
       ) : (
-        <Editor roomId={roomId} />
+        <div style={{ width: '100%', height: '100%' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: 8, background: '#f5f5f5' }}>
+            <strong>Room:</strong>
+            <span style={{ fontFamily: 'monospace' }}>{roomId}</span>
+            <button onClick={() => {
+              const url = `${location.origin}/room/${roomId}/join`;
+              navigator.clipboard.writeText(url).then(() => alert('Link copied')); 
+            }}>Copy Link</button>
+            <button onClick={() => { navigator.clipboard.writeText(`${location.origin}/r/${roomId}`); alert('Short link copied'); }}>Copy Short Link</button>
+          </div>
+          <Editor roomId={roomId} />
+        </div>
       )}
     </div>
   );

@@ -51,6 +51,19 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// Simple redirect to editor page (shareable link)
+router.get('/:id/join', (req, res) => {
+  const { id } = req.params;
+  // Redirect to hosted editor page (server serves `editor.html` for E2E); client can also accept ?room=
+  res.redirect(`/editor.html?room=${id}`);
+});
+
+// Short link convenience route
+router.get('/r/:id', (req, res) => {
+  const { id } = req.params;
+  res.redirect(`/editor.html?room=${id}`);
+});
+
 // Save Yjs snapshot (base64 encoded)
 router.post('/:id/save', async (req, res) => {
   const { id } = req.params;
