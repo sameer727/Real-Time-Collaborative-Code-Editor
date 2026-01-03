@@ -7,6 +7,14 @@ const { MongoMemoryServer } = require('mongodb-memory-server');
 let mongod;
 
 beforeAll(async () => {
+  const envUri = process.env.MONGODB_URI || process.env.TEST_MONGODB_URI;
+  if (envUri) {
+    // If a MongoDB URI is provided (e.g., from CI service), use it
+    await persistence.connect(envUri);
+    return;
+  }
+
+  // Otherwise spin up an in-memory MongoDB for local tests
   mongod = await MongoMemoryServer.create();
   const uri = mongod.getUri();
   await persistence.connect(uri);
