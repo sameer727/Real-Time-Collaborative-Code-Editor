@@ -1,0 +1,27 @@
+{
+  "name": "rtc-editor-client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "yjs": "^13.5.45",
+    "y-websocket": "^1.4.5"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "@playwright/test": "^1.57.0"
+  },
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 5173",
+    "test:e2e": "npx playwright test",
+    "test:e2e:ci": "npx playwright install --with-deps && npx playwright test --reporter=list"
+  }
+}
