@@ -10,5 +10,13 @@ module.exports = {
     // Keep helpful artifacts for CI failures
     screenshot: 'only-on-failure',
     trace: 'on'
+  },
+
+  // Ensure the server is started and reachable before tests run
+  webServer: {
+    command: 'node ../server/src/index.js',
+    url: 'http://127.0.0.1:5000',
+    timeout: 120000,
+    reuseExistingServer: true
   }
 };

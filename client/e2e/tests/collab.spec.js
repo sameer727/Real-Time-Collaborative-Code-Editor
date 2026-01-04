@@ -3,6 +3,7 @@ const { test, expect } = require('@playwright/test');
 test('collaboration updates propagate between two pages', async ({ browser }) => {
   const page1 = await browser.newPage();
   const page2 = await browser.newPage();
+
   // wait for server to be ready (poll /api/health)
   async function waitForServer(page, retries = 20, delay = 500) {
     for (let i = 0; i < retries; i++) {
@@ -30,15 +31,9 @@ test('collaboration updates propagate between two pages', async ({ browser }) =>
   await page1.goto(`/editor.html?room=${roomId}`);
   await page2.goto(`/editor.html?room=${roomId}`);
 
-  // Wait for editors and vendor libs to be available
-  await page1.waitForFunction((rid) => {
-    const diag = window.__rtcDiag && window.__rtcDiag[rid];
-    return !!diag && diag.hasMonaco && diag.hasY && diag.hasYMonaco && !!(window.__rtcEditors && window.__rtcEditors[rid]);
-  }, roomId, { timeout: 45000 });
-  await page2.waitForFunction((rid) => {
-    const diag = window.__rtcDiag && window.__rtcDiag[rid];
-    return !!diag && diag.hasMonaco && diag.hasY && diag.hasYMonaco && !!(window.__rtcEditors && window.__rtcEditors[rid]);
-  }, roomId, { timeout: 45000 });
+  // Wait for editors and Yjs binding to be available
+  await page1.waitForFunction((rid) => !!(window.__rtcEditors && window.__rtcEditors[rid] && window.__rtcDiag && window.__rtcDiag[rid] && window.__rtcDiag[rid].hasYMonaco), roomId, { timeout: 15000 });
+  await page2.waitForFunction((rid) => !!(window.__rtcEditors && window.__rtcEditors[rid] && window.__rtcDiag && window.__rtcDiag[rid] && window.__rtcDiag[rid].hasYMonaco), roomId, { timeout: 15000 });
 
   // Set value in page1
   await page1.evaluate((rid) => {
