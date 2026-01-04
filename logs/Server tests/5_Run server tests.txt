@@ -1,0 +1,53 @@
+﻿2026-01-03T18:11:53.5394156Z ##[group]Run npm test --silent
+2026-01-03T18:11:53.5394700Z [36;1mnpm test --silent[0m
+2026-01-03T18:11:53.5428504Z shell: /usr/bin/bash -e {0}
+2026-01-03T18:11:53.5428746Z ##[endgroup]
+2026-01-03T18:11:55.1322384Z   console.warn
+2026-01-03T18:11:55.1323135Z     Starting the MongoMemoryServer Instance failed, enable debug log for more information. Error:
+2026-01-03T18:11:55.1324497Z      StdoutInstanceError: Instance failed to start because a library is missing or cannot be opened: "libcrypto.so.1.1"
+2026-01-03T18:11:55.1326039Z         at MongoInstance.checkErrorInLine (/home/runner/work/Real-Time-Collaborative-Code-Editor/Real-Time-Collaborative-Code-Editor/server/node_modules/mongodb-memory-server-core/src/util/MongoInstance.ts:678:11)
+2026-01-03T18:11:55.1327978Z         at MongoInstance.stderrHandler (/home/runner/work/Real-Time-Collaborative-Code-Editor/Real-Time-Collaborative-Code-Editor/server/node_modules/mongodb-memory-server-core/src/util/MongoInstance.ts:563:10)
+2026-01-03T18:11:55.1329091Z         at Socket.emit (node:events:517:28)
+2026-01-03T18:11:55.1329608Z         at addChunk (node:internal/streams/readable:368:12)
+2026-01-03T18:11:55.1330116Z         at readableAddChunk (node:internal/streams/readable:341:9)
+2026-01-03T18:11:55.1330841Z         at Socket.Readable.push (node:internal/streams/readable:278:10)
+2026-01-03T18:11:55.1331621Z         at Pipe.onStreamRead (node:internal/stream_base_commons:190:23)
+2026-01-03T18:11:55.1332063Z 
+2026-01-03T18:11:55.1332761Z       at MongoMemoryServer.<anonymous> (node_modules/mongodb-memory-server-core/src/MongoMemoryServer.ts:293:17)
+2026-01-03T18:11:55.1333952Z       at node_modules/tslib/tslib.js:170:75
+2026-01-03T18:11:55.1334565Z       at __awaiter (node_modules/tslib/tslib.js:166:16)
+2026-01-03T18:11:55.1335378Z       at node_modules/mongodb-memory-server-core/src/MongoMemoryServer.ts:284:68
+2026-01-03T18:11:55.1335925Z 
+2026-01-03T18:11:55.1542976Z FAIL test/rooms.test.js
+2026-01-03T18:11:55.1546009Z   Rooms API
+2026-01-03T18:11:55.1548585Z     ✕ creates a room (1 ms)
+2026-01-03T18:11:55.1550001Z     ✕ returns metadata for created room
+2026-01-03T18:11:55.1551057Z     ✕ save and load snapshot
+2026-01-03T18:11:55.1558815Z 
+2026-01-03T18:11:55.1559211Z   ● Rooms API › creates a room
+2026-01-03T18:11:55.1559524Z 
+2026-01-03T18:11:55.1560125Z     Instance failed to start because a library is missing or cannot be opened: "libcrypto.so.1.1"
+2026-01-03T18:11:55.1560792Z 
+2026-01-03T18:11:55.1561593Z       at MongoInstance.checkErrorInLine (node_modules/mongodb-memory-server-core/src/util/MongoInstance.ts:678:11)
+2026-01-03T18:11:55.1563202Z       at MongoInstance.stderrHandler (node_modules/mongodb-memory-server-core/src/util/MongoInstance.ts:563:10)
+2026-01-03T18:11:55.1569221Z 
+2026-01-03T18:11:55.1569724Z   ● Rooms API › returns metadata for created room
+2026-01-03T18:11:55.1570125Z 
+2026-01-03T18:11:55.1570715Z     Instance failed to start because a library is missing or cannot be opened: "libcrypto.so.1.1"
+2026-01-03T18:11:55.1571355Z 
+2026-01-03T18:11:55.1572137Z       at MongoInstance.checkErrorInLine (node_modules/mongodb-memory-server-core/src/util/MongoInstance.ts:678:11)
+2026-01-03T18:11:55.1573979Z       at MongoInstance.stderrHandler (node_modules/mongodb-memory-server-core/src/util/MongoInstance.ts:563:10)
+2026-01-03T18:11:55.1574756Z 
+2026-01-03T18:11:55.1575133Z   ● Rooms API › save and load snapshot
+2026-01-03T18:11:55.1575457Z 
+2026-01-03T18:11:55.1576020Z     Instance failed to start because a library is missing or cannot be opened: "libcrypto.so.1.1"
+2026-01-03T18:11:55.1576653Z 
+2026-01-03T18:11:55.1577379Z       at MongoInstance.checkErrorInLine (node_modules/mongodb-memory-server-core/src/util/MongoInstance.ts:678:11)
+2026-01-03T18:11:55.1578874Z       at MongoInstance.stderrHandler (node_modules/mongodb-memory-server-core/src/util/MongoInstance.ts:563:10)
+2026-01-03T18:11:55.1579654Z 
+2026-01-03T18:11:55.1579957Z Test Suites: 1 failed, 1 total
+2026-01-03T18:11:55.1580468Z Tests:       3 failed, 3 total
+2026-01-03T18:11:55.1580929Z Snapshots:   0 total
+2026-01-03T18:11:55.1581717Z Time:        1.152 s
+2026-01-03T18:11:55.1582400Z Ran all test suites.
+2026-01-03T18:11:55.2068583Z ##[error]Process completed with exit code 1.

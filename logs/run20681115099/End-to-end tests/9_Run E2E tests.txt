@@ -1,0 +1,144 @@
+﻿2026-01-03T18:23:06.6345731Z ##[group]Run npm run test:e2e:ci
+2026-01-03T18:23:06.6346115Z [36;1mnpm run test:e2e:ci[0m
+2026-01-03T18:23:06.6378405Z shell: /usr/bin/bash -e {0}
+2026-01-03T18:23:06.6378634Z ##[endgroup]
+2026-01-03T18:23:06.7687597Z 
+2026-01-03T18:23:06.7688211Z > rtc-editor-client@0.1.0 test:e2e:ci
+2026-01-03T18:23:06.7689007Z > npx playwright install --with-deps && npx playwright test --reporter=list
+2026-01-03T18:23:06.7689640Z 
+2026-01-03T18:23:07.7232921Z Installing dependencies...
+2026-01-03T18:23:07.7350359Z Switching to root user to install dependencies...
+2026-01-03T18:23:07.7979337Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-01-03T18:23:07.8368030Z Hit:6 https://packages.microsoft.com/repos/azure-cli noble InRelease
+2026-01-03T18:23:07.8371889Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-01-03T18:23:07.8393620Z Hit:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease
+2026-01-03T18:23:07.8402982Z Hit:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease
+2026-01-03T18:23:07.8409157Z Hit:7 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease
+2026-01-03T18:23:07.8413497Z Hit:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease
+2026-01-03T18:23:09.0621053Z Reading package lists...
+2026-01-03T18:23:09.0873834Z Reading package lists...
+2026-01-03T18:23:09.3106666Z Building dependency tree...
+2026-01-03T18:23:09.3115275Z Reading state information...
+2026-01-03T18:23:09.3278507Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.1).
+2026-01-03T18:23:09.3279850Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-01-03T18:23:09.3280942Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+2026-01-03T18:23:09.3281850Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-01-03T18:23:09.3282854Z libcairo2 is already the newest version (1.18.0-3build1).
+2026-01-03T18:23:09.3283584Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.9).
+2026-01-03T18:23:09.3284609Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+2026-01-03T18:23:09.3285203Z libdrm2 is already the newest version (2.4.122-1~ubuntu0.24.04.2).
+2026-01-03T18:23:09.3285739Z libgbm1 is already the newest version (25.0.7-0ubuntu0.24.04.2).
+2026-01-03T18:23:09.3286286Z libglib2.0-0t64 is already the newest version (2.80.0-6ubuntu3.5).
+2026-01-03T18:23:09.3286742Z libglib2.0-0t64 set to manually installed.
+2026-01-03T18:23:09.3287187Z libnspr4 is already the newest version (2:4.35-1.1build1).
+2026-01-03T18:23:09.3287665Z libnss3 is already the newest version (2:3.98-1build1).
+2026-01-03T18:23:09.3288172Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+2026-01-03T18:23:09.3289139Z libx11-6 is already the newest version (2:1.8.7-1build1).
+2026-01-03T18:23:09.3289911Z libxcb1 is already the newest version (1.15-1ubuntu2).
+2026-01-03T18:23:09.3290436Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+2026-01-03T18:23:09.3290962Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+2026-01-03T18:23:09.3291469Z libxext6 is already the newest version (2:1.3.4-1build2).
+2026-01-03T18:23:09.3291952Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+2026-01-03T18:23:09.3292458Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+2026-01-03T18:23:09.3292958Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+2026-01-03T18:23:09.3293533Z libcairo-gobject2 is already the newest version (1.18.0-3build1).
+2026-01-03T18:23:09.3294098Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
+2026-01-03T18:23:09.3294661Z libfreetype6 is already the newest version (2.13.2+dfsg-1build3).
+2026-01-03T18:23:09.3295229Z libgdk-pixbuf-2.0-0 is already the newest version (2.42.10+dfsg-3ubuntu3.2).
+2026-01-03T18:23:09.3295702Z libgtk-3-0t64 is already the newest version (3.24.41-4ubuntu1.3).
+2026-01-03T18:23:09.3296156Z libpangocairo-1.0-0 is already the newest version (1.52.1+ds-1build1).
+2026-01-03T18:23:09.3296584Z libx11-xcb1 is already the newest version (2:1.8.7-1build1).
+2026-01-03T18:23:09.3297365Z libxcb-shm0 is already the newest version (1.15-1ubuntu2).
+2026-01-03T18:23:09.3297761Z libxcursor1 is already the newest version (1:1.2.1-1build1).
+2026-01-03T18:23:09.3298137Z libxi6 is already the newest version (2:1.8.1-1build1).
+2026-01-03T18:23:09.3298535Z libxrender1 is already the newest version (1:0.9.10-1.1build1).
+2026-01-03T18:23:09.3298972Z gstreamer1.0-libav is already the newest version (1.24.1-1build1).
+2026-01-03T18:23:09.3299766Z gstreamer1.0-plugins-bad is already the newest version (1.24.2-1ubuntu4).
+2026-01-03T18:23:09.3300359Z gstreamer1.0-plugins-base is already the newest version (1.24.2-1ubuntu0.3).
+2026-01-03T18:23:09.3300880Z gstreamer1.0-plugins-good is already the newest version (1.24.2-1ubuntu1.2).
+2026-01-03T18:23:09.3301325Z libicu74 is already the newest version (74.2-1ubuntu3.1).
+2026-01-03T18:23:09.3301737Z libatomic1 is already the newest version (14.2.0-4ubuntu2~24.04).
+2026-01-03T18:23:09.3302149Z libenchant-2-2 is already the newest version (2.3.3-2build2).
+2026-01-03T18:23:09.3302561Z libepoxy0 is already the newest version (1.5.10-1build1).
+2026-01-03T18:23:09.3303004Z libevent-2.1-7t64 is already the newest version (2.1.12-stable-9ubuntu2).
+2026-01-03T18:23:09.3303420Z libflite1 is already the newest version (2.2-6build3).
+2026-01-03T18:23:09.3303786Z libgles2 is already the newest version (1.7.0-1build1).
+2026-01-03T18:23:09.3304222Z libgstreamer-gl1.0-0 is already the newest version (1.24.2-1ubuntu0.3).
+2026-01-03T18:23:09.3304748Z libgstreamer-plugins-bad1.0-0 is already the newest version (1.24.2-1ubuntu4).
+2026-01-03T18:23:09.3305309Z libgstreamer-plugins-base1.0-0 is already the newest version (1.24.2-1ubuntu0.3).
+2026-01-03T18:23:09.3305817Z libgstreamer1.0-0 is already the newest version (1.24.2-1ubuntu0.1).
+2026-01-03T18:23:09.3306257Z libgtk-4-1 is already the newest version (4.14.5+ds-0ubuntu0.7).
+2026-01-03T18:23:09.3306692Z libharfbuzz-icu0 is already the newest version (8.3.0-2build2).
+2026-01-03T18:23:09.3307124Z libharfbuzz0b is already the newest version (8.3.0-2build2).
+2026-01-03T18:23:09.3307523Z libhyphen0 is already the newest version (2.8.8-7build3).
+2026-01-03T18:23:09.3307931Z libjpeg-turbo8 is already the newest version (2.1.5-2ubuntu2).
+2026-01-03T18:23:09.3308333Z liblcms2-2 is already the newest version (2.14-2build1).
+2026-01-03T18:23:09.3308736Z libmanette-0.2-0 is already the newest version (0.2.7-1build2).
+2026-01-03T18:23:09.3309134Z libopus0 is already the newest version (1.4-1build1).
+2026-01-03T18:23:09.3309727Z libpng16-16t64 is already the newest version (1.6.43-5ubuntu0.1).
+2026-01-03T18:23:09.3310377Z libpng16-16t64 set to manually installed.
+2026-01-03T18:23:09.3310739Z libsecret-1-0 is already the newest version (0.21.4-1build3).
+2026-01-03T18:23:09.3311141Z libvpx9 is already the newest version (1.14.0-1ubuntu2.2).
+2026-01-03T18:23:09.3311575Z libwayland-client0 is already the newest version (1.22.0-2.1build1).
+2026-01-03T18:23:09.3312027Z libwayland-egl1 is already the newest version (1.22.0-2.1build1).
+2026-01-03T18:23:09.3312484Z libwayland-server0 is already the newest version (1.22.0-2.1build1).
+2026-01-03T18:23:09.3312905Z libwebp7 is already the newest version (1.3.2-0.4build3).
+2026-01-03T18:23:09.5302125Z libwebpdemux2 is already the newest version (1.3.2-0.4build3).
+2026-01-03T18:23:09.5302980Z libwoff1 is already the newest version (1.0.2-2build1).
+2026-01-03T18:23:09.5303708Z libxml2 is already the newest version (2.9.14+dfsg-1.3ubuntu3.6).
+2026-01-03T18:23:09.5304532Z libxslt1.1 is already the newest version (1.1.39-0exp1ubuntu0.24.04.2).
+2026-01-03T18:23:09.5305355Z libx264-164 is already the newest version (2:0.164.3108+git31e19f9-1).
+2026-01-03T18:23:09.5306116Z libavif16 is already the newest version (1.0.4-1ubuntu3).
+2026-01-03T18:23:09.5306835Z xvfb is already the newest version (2:21.1.12-1ubuntu1.5).
+2026-01-03T18:23:09.5307683Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+2026-01-03T18:23:09.5308568Z fonts-unifont is already the newest version (1:15.1.01-1build1).
+2026-01-03T18:23:09.5309907Z xfonts-cyrillic is already the newest version (1:1.0.5+nmu1).
+2026-01-03T18:23:09.5310419Z xfonts-scalable is already the newest version (1:1.0.3-1.3).
+2026-01-03T18:23:09.5310848Z fonts-liberation is already the newest version (1:2.1.5-3).
+2026-01-03T18:23:09.5311308Z fonts-ipafont-gothic is already the newest version (00303-21ubuntu1).
+2026-01-03T18:23:09.5312045Z fonts-wqy-zenhei is already the newest version (0.9.45-8).
+2026-01-03T18:23:09.5312776Z fonts-tlwg-loma-otf is already the newest version (1:0.7.3-1).
+2026-01-03T18:23:09.5313553Z fonts-freefont-ttf is already the newest version (20211204+svn4273-2).
+2026-01-03T18:23:09.5314395Z 0 upgraded, 0 newly installed, 0 to remove and 63 not upgraded.
+2026-01-03T18:23:10.8451561Z 
+2026-01-03T18:23:10.8452205Z Running 2 tests using 2 workers
+2026-01-03T18:23:10.8452582Z 
+2026-01-03T18:23:12.0133047Z DIAG: { hasMonaco: [33mfalse[39m, hasY: [33mfalse[39m, hasYMonaco: [33mfalse[39m }
+2026-01-03T18:23:41.9067429Z   ✘  2 e2e/tests/collab.spec.js:3:1 › collaboration updates propagate between two pages (30.0s)
+2026-01-03T18:23:41.9095203Z   ✘  1 e2e/tests/reconnect.spec.js:3:1 › saved snapshot restores on reconnect (30.0s)
+2026-01-03T18:23:41.9223723Z 
+2026-01-03T18:23:41.9228497Z 
+2026-01-03T18:23:41.9236910Z   1) e2e/tests/collab.spec.js:3:1 › collaboration updates propagate between two pages ──────────────
+2026-01-03T18:23:41.9237299Z 
+2026-01-03T18:23:41.9237572Z     [31mTest timeout of 30000ms exceeded.[39m
+2026-01-03T18:23:41.9237870Z 
+2026-01-03T18:23:41.9238018Z     Error: page.waitForFunction: Test ended.
+2026-01-03T18:23:41.9238250Z 
+2026-01-03T18:23:41.9238320Z       32 |
+2026-01-03T18:23:41.9238585Z       33 |   // Wait for editors and vendor libs to be available
+2026-01-03T18:23:41.9238941Z     > 34 |   await page1.waitForFunction((rid) => {
+2026-01-03T18:23:41.9239206Z          |               ^
+2026-01-03T18:23:41.9239695Z       35 |     const diag = window.__rtcDiag && window.__rtcDiag[rid];
+2026-01-03T18:23:41.9240351Z       36 |     return !!diag && diag.hasMonaco && diag.hasY && diag.hasYMonaco && !!(window.__rtcEditors && window.__rtcEditors[rid]);
+2026-01-03T18:23:41.9240864Z       37 |   }, roomId, { timeout: 45000 });
+2026-01-03T18:23:41.9241705Z         at /home/runner/work/Real-Time-Collaborative-Code-Editor/Real-Time-Collaborative-Code-Editor/client/e2e/tests/collab.spec.js:34:15
+2026-01-03T18:23:41.9242223Z 
+2026-01-03T18:23:41.9242988Z   2) e2e/tests/reconnect.spec.js:3:1 › saved snapshot restores on reconnect ────────────────────────
+2026-01-03T18:23:41.9243658Z 
+2026-01-03T18:23:41.9244239Z     [31mTest timeout of 30000ms exceeded.[39m
+2026-01-03T18:23:41.9244436Z 
+2026-01-03T18:23:41.9244662Z     Error: page.waitForFunction: Test ended.
+2026-01-03T18:23:41.9244896Z 
+2026-01-03T18:23:41.9245054Z       39 |
+2026-01-03T18:23:41.9245367Z       40 |   // wait for editor/ydoc/forceSave and vendor libs (longer timeout)
+2026-01-03T18:23:41.9245806Z     > 41 |   await page1.waitForFunction((rid) => {
+2026-01-03T18:23:41.9246123Z          |               ^
+2026-01-03T18:23:41.9246429Z       42 |     const diag = window.__rtcDiag && window.__rtcDiag[rid];
+2026-01-03T18:23:41.9247548Z       43 |     return !!diag && diag.hasMonaco && diag.hasY && diag.hasYMonaco && !!(window.__rtcEditors && window.__rtcEditors[rid]) && !!(window.__rtcForceSave && window.__rtcYDocs && window.__rtcYDocs[rid]);
+2026-01-03T18:23:41.9248323Z       44 |   }, roomId, { timeout: 60000 });
+2026-01-03T18:23:41.9248978Z         at /home/runner/work/Real-Time-Collaborative-Code-Editor/Real-Time-Collaborative-Code-Editor/client/e2e/tests/reconnect.spec.js:41:15
+2026-01-03T18:23:41.9249751Z 
+2026-01-03T18:23:41.9250000Z   2 failed
+2026-01-03T18:23:41.9250532Z     e2e/tests/collab.spec.js:3:1 › collaboration updates propagate between two pages ───────────────
+2026-01-03T18:23:41.9251311Z     e2e/tests/reconnect.spec.js:3:1 › saved snapshot restores on reconnect ─────────────────────────
+2026-01-03T18:23:41.9534771Z ##[error]Process completed with exit code 1.

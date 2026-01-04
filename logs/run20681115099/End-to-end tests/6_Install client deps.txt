@@ -1,0 +1,26 @@
+﻿2026-01-03T18:22:15.7337558Z ##[group]Run npm ci
+2026-01-03T18:22:15.7337830Z [36;1mnpm ci[0m
+2026-01-03T18:22:15.7370924Z shell: /usr/bin/bash -e {0}
+2026-01-03T18:22:15.7371193Z ##[endgroup]
+2026-01-03T18:22:16.5791640Z npm warn deprecated level-errors@2.0.1: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:22:16.5905305Z npm warn deprecated level-concat-iterator@2.0.1: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:22:16.6009690Z npm warn deprecated deferred-leveldown@5.3.0: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:22:16.6054261Z npm warn deprecated encoding-down@6.3.0: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:22:16.6199755Z npm warn deprecated levelup@4.4.0: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:22:16.6201336Z npm warn deprecated level-js@5.0.2: Superseded by browser-level (https://github.com/Level/community#faq)
+2026-01-03T18:22:16.6202983Z npm warn deprecated level-codec@9.0.2: Superseded by level-transcoder (https://github.com/Level/community#faq)
+2026-01-03T18:22:16.6230985Z npm warn deprecated level-packager@5.1.1: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:22:16.7288127Z npm warn deprecated abstract-leveldown@6.2.3: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:22:17.3889728Z npm warn deprecated leveldown@5.6.0: Superseded by classic-level (https://github.com/Level/community#faq)
+2026-01-03T18:22:17.6629721Z 
+2026-01-03T18:22:17.6630532Z added 56 packages, and audited 57 packages in 2s
+2026-01-03T18:22:17.6631043Z 
+2026-01-03T18:22:17.6631370Z 14 packages are looking for funding
+2026-01-03T18:22:17.6633691Z   run `npm fund` for details
+2026-01-03T18:22:17.6704995Z 
+2026-01-03T18:22:17.6705476Z 2 moderate severity vulnerabilities
+2026-01-03T18:22:17.6705729Z 
+2026-01-03T18:22:17.6705970Z To address all issues (including breaking changes), run:
+2026-01-03T18:22:17.6706319Z   npm audit fix --force
+2026-01-03T18:22:17.6706468Z 
+2026-01-03T18:22:17.6706579Z Run `npm audit` for details.

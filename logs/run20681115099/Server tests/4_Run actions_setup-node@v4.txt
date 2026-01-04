@@ -1,0 +1,19 @@
+﻿2026-01-03T18:20:56.9541720Z ##[group]Run actions/setup-node@v4
+2026-01-03T18:20:56.9541994Z with:
+2026-01-03T18:20:56.9542180Z   node-version: 18
+2026-01-03T18:20:56.9542364Z   always-auth: false
+2026-01-03T18:20:56.9542558Z   check-latest: false
+2026-01-03T18:20:56.9543020Z   token: ***
+2026-01-03T18:20:56.9543197Z env:
+2026-01-03T18:20:56.9543449Z   MONGODB_URI: mongodb://127.0.0.1:27017/rtc-editor-test
+2026-01-03T18:20:56.9543735Z ##[endgroup]
+2026-01-03T18:20:57.1221065Z Attempting to download 18...
+2026-01-03T18:20:57.9767863Z Acquiring 18.20.8 - x64 from https://github.com/actions/node-versions/releases/download/18.20.8-14110393767/node-18.20.8-linux-x64.tar.gz
+2026-01-03T18:20:58.4633848Z Extracting ...
+2026-01-03T18:20:58.4727367Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/434925bd-605c-4dc7-a0c2-86b0496de02c -f /home/runner/work/_temp/9eec1bc1-3e29-4a67-b305-36fd5fba0015
+2026-01-03T18:20:59.3714066Z Adding to the cache ...
+2026-01-03T18:21:00.5712563Z ##[group]Environment details
+2026-01-03T18:21:00.7944252Z node: v18.20.8
+2026-01-03T18:21:00.7944638Z npm: 10.8.2
+2026-01-03T18:21:00.7944910Z yarn: 1.22.22
+2026-01-03T18:21:00.7945515Z ##[endgroup]

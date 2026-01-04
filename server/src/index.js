@@ -12,8 +12,6 @@ app.use(express.json());
 
 // Serve simple static files (editor preview for E2E)
 app.use(express.static(path.join(__dirname, '..', 'public')));
-// Expose client node_modules as /vendor for E2E (local copies of yjs/y-websocket/y-monaco)
-app.use('/vendor', express.static(path.join(__dirname, '..', '..', 'client', 'node_modules')));
 
 const roomsRouter = require('./routes/rooms');
 const persistence = require('./persistence');

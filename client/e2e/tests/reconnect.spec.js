@@ -4,12 +4,12 @@ const { test, expect } = require('@playwright/test');
 test('reconnect restores persisted content', async ({ browser }) => {
   const page = await browser.newPage();
 
-  // wait for server to be ready
+  // wait for server by trying to load the editor page
   let healthy = false;
   for (let i = 0; i < 20; i++) {
     try {
-      const res = await page.request.get('/api/health');
-      if (res.ok()) { healthy = true; break; }
+      const resp = await page.goto('/editor.html', { waitUntil: 'domcontentloaded', timeout: 5000 });
+      if (resp && resp.ok()) { healthy = true; break; }
     } catch (e) {}
     await new Promise(r => setTimeout(r, 500));
   }

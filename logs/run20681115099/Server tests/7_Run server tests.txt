@@ -1,0 +1,27 @@
+﻿2026-01-03T18:21:37.7437182Z ##[group]Run npm test --silent
+2026-01-03T18:21:37.7437455Z [36;1mnpm test --silent[0m
+2026-01-03T18:21:37.7456339Z shell: /usr/bin/bash -e {0}
+2026-01-03T18:21:37.7456587Z env:
+2026-01-03T18:21:37.7456826Z   MONGODB_URI: mongodb://127.0.0.1:27017/rtc-editor-test
+2026-01-03T18:21:37.7457107Z ##[endgroup]
+2026-01-03T18:21:39.1864727Z   console.log
+2026-01-03T18:21:39.1865111Z     Connected to MongoDB
+2026-01-03T18:21:39.1865281Z 
+2026-01-03T18:21:39.1865495Z       at Object.log [as connect] (src/persistence.js:6:11)
+2026-01-03T18:21:39.1865764Z 
+2026-01-03T18:21:39.2035155Z   console.log
+2026-01-03T18:21:39.2035644Z     Connected to MongoDB
+2026-01-03T18:21:39.2035837Z 
+2026-01-03T18:21:39.2036051Z       at Object.log [as connect] (src/persistence.js:6:11)
+2026-01-03T18:21:39.2036309Z 
+2026-01-03T18:21:39.2858000Z PASS test/rooms.test.js
+2026-01-03T18:21:39.2859524Z   Rooms API
+2026-01-03T18:21:39.2861685Z     ✓ creates a room (58 ms)
+2026-01-03T18:21:39.2862310Z     ✓ returns metadata for created room (20 ms)
+2026-01-03T18:21:39.2862987Z     ✓ save and load snapshot (14 ms)
+2026-01-03T18:21:39.2863231Z 
+2026-01-03T18:21:39.2881797Z Test Suites: 1 passed, 1 total
+2026-01-03T18:21:39.2882125Z Tests:       3 passed, 3 total
+2026-01-03T18:21:39.2882349Z Snapshots:   0 total
+2026-01-03T18:21:39.2882560Z Time:        1.122 s
+2026-01-03T18:21:39.2882749Z Ran all test suites.

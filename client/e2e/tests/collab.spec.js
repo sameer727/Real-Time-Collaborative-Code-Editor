@@ -4,12 +4,12 @@ test('collaboration updates propagate between two pages', async ({ browser }) =>
   const page1 = await browser.newPage();
   const page2 = await browser.newPage();
 
-  // wait for server to be ready (poll /api/health)
-  async function waitForServer(page, retries = 20, delay = 500) {
+  // wait for server to be ready by trying to load /editor.html
+  async function waitForServerViaPage(page, retries = 20, delay = 500) {
     for (let i = 0; i < retries; i++) {
       try {
-        const res = await page.request.get('/api/health');
-        if (res.ok()) return true;
+        const resp = await page.goto('/editor.html', { waitUntil: 'domcontentloaded', timeout: 5000 });
+        if (resp && resp.ok()) return true;
       } catch (e) {
         // ignore
       }
@@ -18,7 +18,7 @@ test('collaboration updates propagate between two pages', async ({ browser }) =>
     throw new Error('Server did not become ready');
   }
 
-  await waitForServer(page1);
+  await waitForServerViaPage(page1);
 
   // Create a room via server API from the browser context (avoids Node fetch issues)
   await page1.goto('/editor.html');

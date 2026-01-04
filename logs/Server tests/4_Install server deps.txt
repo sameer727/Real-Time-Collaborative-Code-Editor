@@ -1,0 +1,30 @@
+﻿2026-01-03T18:11:45.8733334Z ##[group]Run npm ci
+2026-01-03T18:11:45.8734004Z [36;1mnpm ci[0m
+2026-01-03T18:11:45.8772818Z shell: /usr/bin/bash -e {0}
+2026-01-03T18:11:45.8773166Z ##[endgroup]
+2026-01-03T18:11:47.8986329Z npm warn deprecated supertest@6.3.4: Please upgrade to supertest v7.1.3+, see release notes at https://github.com/forwardemail/supertest/releases/tag/v7.1.3 - maintenance is supported by Forward Email @ https://forwardemail.net
+2026-01-03T18:11:48.3555403Z npm warn deprecated level-concat-iterator@2.0.1: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:11:48.4424237Z npm warn deprecated level-errors@2.0.1: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:11:48.5481908Z npm warn deprecated level-js@5.0.2: Superseded by browser-level (https://github.com/Level/community#faq)
+2026-01-03T18:11:48.5527454Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2026-01-03T18:11:48.6028778Z npm warn deprecated level-packager@5.1.1: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:11:48.6561477Z npm warn deprecated level-codec@9.0.2: Superseded by level-transcoder (https://github.com/Level/community#faq)
+2026-01-03T18:11:48.7374895Z npm warn deprecated levelup@4.4.0: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:11:48.7399720Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2026-01-03T18:11:48.9011799Z npm warn deprecated encoding-down@6.3.0: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:11:48.9035032Z npm warn deprecated deferred-leveldown@5.3.0: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:11:49.5843875Z npm warn deprecated superagent@8.1.2: Please upgrade to superagent v10.2.2+, see release notes at https://github.com/forwardemail/superagent/releases/tag/v10.2.2 - maintenance is supported by Forward Email @ https://forwardemail.net
+2026-01-03T18:11:49.8455644Z npm warn deprecated abstract-leveldown@6.2.3: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:11:50.8265979Z npm warn deprecated leveldown@5.6.0: Superseded by classic-level (https://github.com/Level/community#faq)
+2026-01-03T18:11:53.4979400Z 
+2026-01-03T18:11:53.4980291Z added 550 packages, and audited 551 packages in 8s
+2026-01-03T18:11:53.4980807Z 
+2026-01-03T18:11:53.4981120Z 72 packages are looking for funding
+2026-01-03T18:11:53.4981727Z   run `npm fund` for details
+2026-01-03T18:11:53.5058695Z 
+2026-01-03T18:11:53.5059636Z 3 high severity vulnerabilities
+2026-01-03T18:11:53.5061030Z 
+2026-01-03T18:11:53.5061469Z To address all issues (including breaking changes), run:
+2026-01-03T18:11:53.5062059Z   npm audit fix --force
+2026-01-03T18:11:53.5062309Z 
+2026-01-03T18:11:53.5062513Z Run `npm audit` for details.

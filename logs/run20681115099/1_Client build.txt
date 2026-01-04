@@ -1,0 +1,175 @@
+﻿2026-01-03T18:21:45.1612432Z Current runner version: '2.330.0'
+2026-01-03T18:21:45.1645381Z ##[group]Runner Image Provisioner
+2026-01-03T18:21:45.1646603Z Hosted Compute Agent
+2026-01-03T18:21:45.1647704Z Version: 20251211.462
+2026-01-03T18:21:45.1648806Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
+2026-01-03T18:21:45.1649995Z Build Date: 2025-12-11T16:28:49Z
+2026-01-03T18:21:45.1651335Z Worker ID: {34ffb80b-a59b-472a-9dc8-7b0a848e7b05}
+2026-01-03T18:21:45.1652385Z ##[endgroup]
+2026-01-03T18:21:45.1653317Z ##[group]Operating System
+2026-01-03T18:21:45.1654224Z Ubuntu
+2026-01-03T18:21:45.1655068Z 24.04.3
+2026-01-03T18:21:45.1655935Z LTS
+2026-01-03T18:21:45.1656833Z ##[endgroup]
+2026-01-03T18:21:45.1657658Z ##[group]Runner Image
+2026-01-03T18:21:45.1658798Z Image: ubuntu-24.04
+2026-01-03T18:21:45.1659728Z Version: 20251215.174.1
+2026-01-03T18:21:45.1661658Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251215.174/images/ubuntu/Ubuntu2404-Readme.md
+2026-01-03T18:21:45.1664442Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251215.174
+2026-01-03T18:21:45.1666302Z ##[endgroup]
+2026-01-03T18:21:45.1668131Z ##[group]GITHUB_TOKEN Permissions
+2026-01-03T18:21:45.1670866Z Contents: read
+2026-01-03T18:21:45.1671698Z Metadata: read
+2026-01-03T18:21:45.1672611Z Packages: read
+2026-01-03T18:21:45.1673537Z ##[endgroup]
+2026-01-03T18:21:45.1676847Z Secret source: Actions
+2026-01-03T18:21:45.1678919Z Prepare workflow directory
+2026-01-03T18:21:45.2145689Z Prepare all required actions
+2026-01-03T18:21:45.2202339Z Getting action download info
+2026-01-03T18:21:45.4532847Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-01-03T18:21:45.5832068Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-01-03T18:21:45.8435899Z Complete job name: Client build
+2026-01-03T18:21:45.9071449Z ##[group]Run actions/checkout@v4
+2026-01-03T18:21:45.9072193Z with:
+2026-01-03T18:21:45.9072658Z   repository: sameer727/Real-Time-Collaborative-Code-Editor
+2026-01-03T18:21:45.9073389Z   token: ***
+2026-01-03T18:21:45.9073730Z   ssh-strict: true
+2026-01-03T18:21:45.9074088Z   ssh-user: git
+2026-01-03T18:21:45.9074478Z   persist-credentials: true
+2026-01-03T18:21:45.9074898Z   clean: true
+2026-01-03T18:21:45.9075290Z   sparse-checkout-cone-mode: true
+2026-01-03T18:21:45.9075747Z   fetch-depth: 1
+2026-01-03T18:21:45.9076117Z   fetch-tags: false
+2026-01-03T18:21:45.9076497Z   show-progress: true
+2026-01-03T18:21:45.9076886Z   lfs: false
+2026-01-03T18:21:45.9077250Z   submodules: false
+2026-01-03T18:21:45.9077656Z   set-safe-directory: true
+2026-01-03T18:21:45.9078277Z ##[endgroup]
+2026-01-03T18:21:46.0088141Z Syncing repository: sameer727/Real-Time-Collaborative-Code-Editor
+2026-01-03T18:21:46.0090145Z ##[group]Getting Git version info
+2026-01-03T18:21:46.0091503Z Working directory is '/home/runner/work/Real-Time-Collaborative-Code-Editor/Real-Time-Collaborative-Code-Editor'
+2026-01-03T18:21:46.0092776Z [command]/usr/bin/git version
+2026-01-03T18:21:46.0154233Z git version 2.52.0
+2026-01-03T18:21:46.0179158Z ##[endgroup]
+2026-01-03T18:21:46.0192680Z Temporarily overriding HOME='/home/runner/work/_temp/a400d11b-6cfb-42c2-9c7b-50015cf16832' before making global git config changes
+2026-01-03T18:21:46.0194043Z Adding repository directory to the temporary git global config as a safe directory
+2026-01-03T18:21:46.0205075Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Real-Time-Collaborative-Code-Editor/Real-Time-Collaborative-Code-Editor
+2026-01-03T18:21:46.0241393Z Deleting the contents of '/home/runner/work/Real-Time-Collaborative-Code-Editor/Real-Time-Collaborative-Code-Editor'
+2026-01-03T18:21:46.0244372Z ##[group]Initializing the repository
+2026-01-03T18:21:46.0248609Z [command]/usr/bin/git init /home/runner/work/Real-Time-Collaborative-Code-Editor/Real-Time-Collaborative-Code-Editor
+2026-01-03T18:21:46.0332143Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-01-03T18:21:46.0333415Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-01-03T18:21:46.0334705Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-01-03T18:21:46.0335876Z hint: call:
+2026-01-03T18:21:46.0336476Z hint:
+2026-01-03T18:21:46.0337396Z hint: 	git config --global init.defaultBranch <name>
+2026-01-03T18:21:46.0338300Z hint:
+2026-01-03T18:21:46.0339161Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-01-03T18:21:46.0340065Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-01-03T18:21:46.0340960Z hint:
+2026-01-03T18:21:46.0341338Z hint: 	git branch -m <name>
+2026-01-03T18:21:46.0341770Z hint:
+2026-01-03T18:21:46.0342362Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-01-03T18:21:46.0344181Z Initialized empty Git repository in /home/runner/work/Real-Time-Collaborative-Code-Editor/Real-Time-Collaborative-Code-Editor/.git/
+2026-01-03T18:21:46.0349184Z [command]/usr/bin/git remote add origin https://github.com/sameer727/Real-Time-Collaborative-Code-Editor
+2026-01-03T18:21:46.0382367Z ##[endgroup]
+2026-01-03T18:21:46.0383084Z ##[group]Disabling automatic garbage collection
+2026-01-03T18:21:46.0386168Z [command]/usr/bin/git config --local gc.auto 0
+2026-01-03T18:21:46.0413840Z ##[endgroup]
+2026-01-03T18:21:46.0414487Z ##[group]Setting up auth
+2026-01-03T18:21:46.0420105Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-01-03T18:21:46.0448613Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-01-03T18:21:46.0766718Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-01-03T18:21:46.0794974Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-01-03T18:21:46.1009299Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-01-03T18:21:46.1037764Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-01-03T18:21:46.1271641Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-01-03T18:21:46.1304931Z ##[endgroup]
+2026-01-03T18:21:46.1305765Z ##[group]Fetching the repository
+2026-01-03T18:21:46.1312922Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0b46787f412ed91a958f88401b8221b3354593ed:refs/remotes/origin/ci/e2e
+2026-01-03T18:21:46.2952062Z From https://github.com/sameer727/Real-Time-Collaborative-Code-Editor
+2026-01-03T18:21:46.2953533Z  * [new ref]         0b46787f412ed91a958f88401b8221b3354593ed -> origin/ci/e2e
+2026-01-03T18:21:46.2983864Z ##[endgroup]
+2026-01-03T18:21:46.2984545Z ##[group]Determining the checkout info
+2026-01-03T18:21:46.2986070Z ##[endgroup]
+2026-01-03T18:21:46.2991157Z [command]/usr/bin/git sparse-checkout disable
+2026-01-03T18:21:46.3031197Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-01-03T18:21:46.3056112Z ##[group]Checking out the ref
+2026-01-03T18:21:46.3059793Z [command]/usr/bin/git checkout --progress --force -B ci/e2e refs/remotes/origin/ci/e2e
+2026-01-03T18:21:46.3142568Z Switched to a new branch 'ci/e2e'
+2026-01-03T18:21:46.3145676Z branch 'ci/e2e' set up to track 'origin/ci/e2e'.
+2026-01-03T18:21:46.3152037Z ##[endgroup]
+2026-01-03T18:21:46.3184354Z [command]/usr/bin/git log -1 --format=%H
+2026-01-03T18:21:46.3205952Z 0b46787f412ed91a958f88401b8221b3354593ed
+2026-01-03T18:21:46.3439519Z ##[group]Run actions/setup-node@v4
+2026-01-03T18:21:46.3440057Z with:
+2026-01-03T18:21:46.3440575Z   node-version: 18
+2026-01-03T18:21:46.3440983Z   always-auth: false
+2026-01-03T18:21:46.3441594Z   check-latest: false
+2026-01-03T18:21:46.3442169Z   token: ***
+2026-01-03T18:21:46.3442556Z ##[endgroup]
+2026-01-03T18:21:46.5141489Z Attempting to download 18...
+2026-01-03T18:21:46.8152028Z Acquiring 18.20.8 - x64 from https://github.com/actions/node-versions/releases/download/18.20.8-14110393767/node-18.20.8-linux-x64.tar.gz
+2026-01-03T18:21:47.4439997Z Extracting ...
+2026-01-03T18:21:47.4539060Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/00c510d4-d775-48df-bd99-454ca7eb128f -f /home/runner/work/_temp/14f5c637-6453-464f-9245-223714efadff
+2026-01-03T18:21:48.3860418Z Adding to the cache ...
+2026-01-03T18:21:49.9775857Z ##[group]Environment details
+2026-01-03T18:21:50.2218518Z node: v18.20.8
+2026-01-03T18:21:50.2219651Z npm: 10.8.2
+2026-01-03T18:21:50.2220068Z yarn: 1.22.22
+2026-01-03T18:21:50.2221006Z ##[endgroup]
+2026-01-03T18:21:50.2372173Z ##[group]Run npm ci
+2026-01-03T18:21:50.2372446Z [36;1mnpm ci[0m
+2026-01-03T18:21:50.2409223Z shell: /usr/bin/bash -e {0}
+2026-01-03T18:21:50.2409474Z ##[endgroup]
+2026-01-03T18:21:51.1793387Z npm warn deprecated level-errors@2.0.1: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:21:51.1901658Z npm warn deprecated level-concat-iterator@2.0.1: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:21:51.1949601Z npm warn deprecated encoding-down@6.3.0: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:21:51.2238004Z npm warn deprecated deferred-leveldown@5.3.0: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:21:51.2410893Z npm warn deprecated level-packager@5.1.1: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:21:51.2417640Z npm warn deprecated level-codec@9.0.2: Superseded by level-transcoder (https://github.com/Level/community#faq)
+2026-01-03T18:21:51.2492715Z npm warn deprecated levelup@4.4.0: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:21:51.2614764Z npm warn deprecated level-js@5.0.2: Superseded by browser-level (https://github.com/Level/community#faq)
+2026-01-03T18:21:51.3378897Z npm warn deprecated abstract-leveldown@6.2.3: Superseded by abstract-level (https://github.com/Level/community#faq)
+2026-01-03T18:21:51.9730528Z npm warn deprecated leveldown@5.6.0: Superseded by classic-level (https://github.com/Level/community#faq)
+2026-01-03T18:21:52.2092700Z 
+2026-01-03T18:21:52.2093462Z added 56 packages, and audited 57 packages in 2s
+2026-01-03T18:21:52.2095498Z 
+2026-01-03T18:21:52.2095945Z 14 packages are looking for funding
+2026-01-03T18:21:52.2165323Z   run `npm fund` for details
+2026-01-03T18:21:52.2165606Z 
+2026-01-03T18:21:52.2165822Z 2 moderate severity vulnerabilities
+2026-01-03T18:21:52.2166005Z 
+2026-01-03T18:21:52.2166306Z To address all issues (including breaking changes), run:
+2026-01-03T18:21:52.2166680Z   npm audit fix --force
+2026-01-03T18:21:52.2166841Z 
+2026-01-03T18:21:52.2166995Z Run `npm audit` for details.
+2026-01-03T18:21:52.2335262Z ##[group]Run npm run build --silent
+2026-01-03T18:21:52.2335597Z [36;1mnpm run build --silent[0m
+2026-01-03T18:21:52.2371665Z shell: /usr/bin/bash -e {0}
+2026-01-03T18:21:52.2371909Z ##[endgroup]
+2026-01-03T18:21:52.5122822Z [36mvite v5.4.21 [32mbuilding for production...[36m[39m
+2026-01-03T18:21:52.5620879Z transforming...
+2026-01-03T18:21:53.6337150Z [32m✓[39m 69 modules transformed.
+2026-01-03T18:21:53.7853446Z rendering chunks...
+2026-01-03T18:21:53.7922534Z computing gzip size...
+2026-01-03T18:21:53.8010736Z [2mdist/[22m[32mindex.html                 [39m[1m[2m  0.39 kB[22m[1m[22m[2m │ gzip:  0.26 kB[22m
+2026-01-03T18:21:53.8012414Z [2mdist/[22m[2massets/[22m[35mindex-CDOxn2OI.css  [39m[1m[2m  0.16 kB[22m[1m[22m[2m │ gzip:  0.14 kB[22m
+2026-01-03T18:21:53.8013998Z [2mdist/[22m[2massets/[22m[36mindex-1E2pAIa8.js   [39m[1m[2m237.17 kB[22m[1m[22m[2m │ gzip: 74.68 kB[22m
+2026-01-03T18:21:53.8016495Z [32m✓ built in 1.26s[39m
+2026-01-03T18:21:53.8306073Z Post job cleanup.
+2026-01-03T18:21:53.9991683Z Post job cleanup.
+2026-01-03T18:21:54.0899944Z [command]/usr/bin/git version
+2026-01-03T18:21:54.0934705Z git version 2.52.0
+2026-01-03T18:21:54.0975774Z Temporarily overriding HOME='/home/runner/work/_temp/4d1d5254-4002-4a64-8300-7ae063b7c129' before making global git config changes
+2026-01-03T18:21:54.0976609Z Adding repository directory to the temporary git global config as a safe directory
+2026-01-03T18:21:54.0982874Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Real-Time-Collaborative-Code-Editor/Real-Time-Collaborative-Code-Editor
+2026-01-03T18:21:54.1017163Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-01-03T18:21:54.1049315Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-01-03T18:21:54.1274526Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-01-03T18:21:54.1294298Z http.https://github.com/.extraheader
+2026-01-03T18:21:54.1306961Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-01-03T18:21:54.1336012Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-01-03T18:21:54.1550399Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-01-03T18:21:54.1579313Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-01-03T18:21:54.1891983Z Cleaning up orphan processes

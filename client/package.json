@@ -22,7 +22,6 @@
     "build": "vite build",
     "preview": "vite preview --port 5173",
     "test:e2e": "npx playwright test",
-    "test:e2e:ci": "npx playwright install --with-deps && npx playwright test --reporter=list",
-    "test:e2e:single": "npx playwright test -g reconnect.spec.js"
+    "test:e2e:ci": "npx playwright install --with-deps && npx playwright test --reporter=list"
   }
 }

@@ -1,0 +1,5 @@
+﻿2026-01-03T18:22:10.7204537Z ##[group]Run node src/index.js &
+2026-01-03T18:22:10.7205074Z [36;1mnode src/index.js &[0m
+2026-01-03T18:22:10.7238957Z shell: /usr/bin/bash -e {0}
+2026-01-03T18:22:10.7239212Z ##[endgroup]
+2026-01-03T18:22:11.0847723Z Server listening on 0.0.0.0:5000

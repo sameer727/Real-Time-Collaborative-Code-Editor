@@ -1,0 +1,6 @@
+﻿2026-01-03T18:22:17.6877181Z ##[group]Run npm run preview --silent &
+2026-01-03T18:22:17.6877611Z [36;1mnpm run preview --silent &[0m
+2026-01-03T18:22:17.6913696Z shell: /usr/bin/bash -e {0}
+2026-01-03T18:22:17.6913935Z ##[endgroup]
+2026-01-03T18:22:17.9663224Z   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+2026-01-03T18:22:17.9664562Z [2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m

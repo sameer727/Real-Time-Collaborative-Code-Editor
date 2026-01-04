@@ -1,0 +1,72 @@
+﻿2026-01-03T18:21:45.9071431Z ##[group]Run actions/checkout@v4
+2026-01-03T18:21:45.9072184Z with:
+2026-01-03T18:21:45.9072654Z   repository: sameer727/Real-Time-Collaborative-Code-Editor
+2026-01-03T18:21:45.9073386Z   token: ***
+2026-01-03T18:21:45.9073723Z   ssh-strict: true
+2026-01-03T18:21:45.9074085Z   ssh-user: git
+2026-01-03T18:21:45.9074475Z   persist-credentials: true
+2026-01-03T18:21:45.9074895Z   clean: true
+2026-01-03T18:21:45.9075286Z   sparse-checkout-cone-mode: true
+2026-01-03T18:21:45.9075745Z   fetch-depth: 1
+2026-01-03T18:21:45.9076114Z   fetch-tags: false
+2026-01-03T18:21:45.9076494Z   show-progress: true
+2026-01-03T18:21:45.9076883Z   lfs: false
+2026-01-03T18:21:45.9077248Z   submodules: false
+2026-01-03T18:21:45.9077653Z   set-safe-directory: true
+2026-01-03T18:21:45.9078270Z ##[endgroup]
+2026-01-03T18:21:46.0088093Z Syncing repository: sameer727/Real-Time-Collaborative-Code-Editor
+2026-01-03T18:21:46.0090126Z ##[group]Getting Git version info
+2026-01-03T18:21:46.0091438Z Working directory is '/home/runner/work/Real-Time-Collaborative-Code-Editor/Real-Time-Collaborative-Code-Editor'
+2026-01-03T18:21:46.0092772Z [command]/usr/bin/git version
+2026-01-03T18:21:46.0154209Z git version 2.52.0
+2026-01-03T18:21:46.0179139Z ##[endgroup]
+2026-01-03T18:21:46.0192659Z Temporarily overriding HOME='/home/runner/work/_temp/a400d11b-6cfb-42c2-9c7b-50015cf16832' before making global git config changes
+2026-01-03T18:21:46.0194038Z Adding repository directory to the temporary git global config as a safe directory
+2026-01-03T18:21:46.0205054Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Real-Time-Collaborative-Code-Editor/Real-Time-Collaborative-Code-Editor
+2026-01-03T18:21:46.0241372Z Deleting the contents of '/home/runner/work/Real-Time-Collaborative-Code-Editor/Real-Time-Collaborative-Code-Editor'
+2026-01-03T18:21:46.0244359Z ##[group]Initializing the repository
+2026-01-03T18:21:46.0248575Z [command]/usr/bin/git init /home/runner/work/Real-Time-Collaborative-Code-Editor/Real-Time-Collaborative-Code-Editor
+2026-01-03T18:21:46.0332118Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-01-03T18:21:46.0333409Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-01-03T18:21:46.0334690Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-01-03T18:21:46.0335865Z hint: call:
+2026-01-03T18:21:46.0336466Z hint:
+2026-01-03T18:21:46.0337388Z hint: 	git config --global init.defaultBranch <name>
+2026-01-03T18:21:46.0338295Z hint:
+2026-01-03T18:21:46.0339150Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-01-03T18:21:46.0340062Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-01-03T18:21:46.0340955Z hint:
+2026-01-03T18:21:46.0341335Z hint: 	git branch -m <name>
+2026-01-03T18:21:46.0341767Z hint:
+2026-01-03T18:21:46.0342358Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-01-03T18:21:46.0344149Z Initialized empty Git repository in /home/runner/work/Real-Time-Collaborative-Code-Editor/Real-Time-Collaborative-Code-Editor/.git/
+2026-01-03T18:21:46.0349164Z [command]/usr/bin/git remote add origin https://github.com/sameer727/Real-Time-Collaborative-Code-Editor
+2026-01-03T18:21:46.0382348Z ##[endgroup]
+2026-01-03T18:21:46.0383079Z ##[group]Disabling automatic garbage collection
+2026-01-03T18:21:46.0386158Z [command]/usr/bin/git config --local gc.auto 0
+2026-01-03T18:21:46.0413821Z ##[endgroup]
+2026-01-03T18:21:46.0414476Z ##[group]Setting up auth
+2026-01-03T18:21:46.0420092Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-01-03T18:21:46.0448591Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-01-03T18:21:46.0766695Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-01-03T18:21:46.0794700Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-01-03T18:21:46.1009275Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-01-03T18:21:46.1037742Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-01-03T18:21:46.1271612Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-01-03T18:21:46.1304910Z ##[endgroup]
+2026-01-03T18:21:46.1305760Z ##[group]Fetching the repository
+2026-01-03T18:21:46.1312901Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0b46787f412ed91a958f88401b8221b3354593ed:refs/remotes/origin/ci/e2e
+2026-01-03T18:21:46.2951997Z From https://github.com/sameer727/Real-Time-Collaborative-Code-Editor
+2026-01-03T18:21:46.2953516Z  * [new ref]         0b46787f412ed91a958f88401b8221b3354593ed -> origin/ci/e2e
+2026-01-03T18:21:46.2983841Z ##[endgroup]
+2026-01-03T18:21:46.2984540Z ##[group]Determining the checkout info
+2026-01-03T18:21:46.2986062Z ##[endgroup]
+2026-01-03T18:21:46.2991139Z [command]/usr/bin/git sparse-checkout disable
+2026-01-03T18:21:46.3031172Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-01-03T18:21:46.3056093Z ##[group]Checking out the ref
+2026-01-03T18:21:46.3059769Z [command]/usr/bin/git checkout --progress --force -B ci/e2e refs/remotes/origin/ci/e2e
+2026-01-03T18:21:46.3142542Z Switched to a new branch 'ci/e2e'
+2026-01-03T18:21:46.3145655Z branch 'ci/e2e' set up to track 'origin/ci/e2e'.
+2026-01-03T18:21:46.3152022Z ##[endgroup]
+2026-01-03T18:21:46.3184331Z [command]/usr/bin/git log -1 --format=%H
+2026-01-03T18:21:46.3205927Z 0b46787f412ed91a958f88401b8221b3354593ed
