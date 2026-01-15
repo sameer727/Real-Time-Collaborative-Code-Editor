@@ -20,7 +20,7 @@
 
         // Diagnostics visible to tests
         window.__rtcDiag = window.__rtcDiag || {};
-        window.__rtcDiag[room] = { hasMonaco: false, hasY: false, hasYMonaco: false, failedLoads: [] };
+        window.__rtcDiag[room] = { hasMonaco: false, hasY: false, hasYMonaco: false, hasYWebsocket: false, failedLoads: [], usedVendor: null };
         // Periodic log to help CI debugging
         setInterval(() => console.log('DIAG:', window.__rtcDiag[room]), 5000);
 
@@ -34,10 +34,42 @@
           return s;
         }
 
-        // Prefer cdn.jsdelivr (previous CI traces showed unpkg requests were blocked by ORB)
-        loadScript('https://cdn.jsdelivr.net/npm/yjs@13.5.45/dist/yjs.js', 'hasY', 'yjs');
-        loadScript('https://cdn.jsdelivr.net/npm/y-websocket@1.4.5/dist/y-websocket.js', 'hasYWebsocket', 'y-websocket');
-        loadScript('https://cdn.jsdelivr.net/npm/y-monaco@1.0.0/dist/y-monaco.js', 'hasYMonaco', 'y-monaco');
+        // Try vendor bundle on the local server first to avoid CDN flakiness in CI.
+        function loadVendorThenFallback() {
+          const vendorUrl = '/vendor/vendor-bundle.js';
+          const s = document.createElement('script');
+          s.src = vendorUrl;
+          s.crossOrigin = 'anonymous';
+          s.onload = () => {
+            window.__rtcDiag[room].usedVendor = 'local';
+            window.__rtcDiag[room].hasY = !!window.Y;
+            window.__rtcDiag[room].hasYWebsocket = !!window.WebsocketProvider;
+            window.__rtcDiag[room].hasYMonaco = !!window.YMonaco;
+            console.log('LOADED local vendor bundle', vendorUrl);
+          };
+          s.onerror = () => {
+            window.__rtcDiag[room].usedVendor = 'cdn';
+            console.warn('Local vendor bundle failed, falling back to CDN', vendorUrl);
+            // Prefer cdn.jsdelivr (previous CI traces showed unpkg requests were blocked by ORB)
+            loadScript('https://cdn.jsdelivr.net/npm/yjs@13.5.45/dist/yjs.js', 'hasY', 'yjs');
+            loadScript('https://cdn.jsdelivr.net/npm/y-websocket@1.4.5/dist/y-websocket.js', 'hasYWebsocket', 'y-websocket');
+            // y-monaco @1.0.0 is not available on some CDNs; use an older published version as a more reliable fallback
+            loadScript('https://cdn.jsdelivr.net/npm/y-monaco@0.1.6/dist/y-monaco.js', 'hasYMonaco', 'y-monaco');
+          };
+          document.head.appendChild(s);
+
+          // Safety: if vendor bundle doesn't initialize quickly, also try CDN fallbacks
+          setTimeout(() => {
+            if (!window.Y && !window.WebsocketProvider && !window.YMonaco) {
+              window.__rtcDiag[room].usedVendor = 'cdn';
+              console.warn('Vendor bundle not available yet, loading CDN fallbacks');
+              loadScript('https://cdn.jsdelivr.net/npm/yjs@13.5.45/dist/yjs.js', 'hasY', 'yjs');
+              loadScript('https://cdn.jsdelivr.net/npm/y-websocket@1.4.5/dist/y-websocket.js', 'hasYWebsocket', 'y-websocket');
+              loadScript('https://cdn.jsdelivr.net/npm/y-monaco@0.1.6/dist/y-monaco.js', 'hasYMonaco', 'y-monaco');
+            }
+          }, 500);
+        }
+        loadVendorThenFallback();
 
         // Configure Monaco loader and initialize editor once monaco is available
         require.config({ paths: { vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.36.1/min/vs' } });
